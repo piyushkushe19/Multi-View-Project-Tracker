@@ -68,7 +68,7 @@ interface AppStore {
 
   // Collaboration simulation
   simUsers: SimUser[];
-  setSimUsers: (users: SimUser[]) => void;
+  setSimUsers: (users: SimUser[] | ((prev: SimUser[]) => SimUser[])) => void;
 }
 
 // ─── Default filter state ─────────────────────────────────────────────────────
@@ -157,5 +157,11 @@ export const useAppStore = create<AppStore>((set, get) => ({
     });
   },
 
-  setSimUsers: (users) => set({ simUsers: users }),
+  setSimUsers: (users) => {
+    if (typeof users === 'function') {
+      set(state => ({ simUsers: (users as (prev: SimUser[]) => SimUser[])(state.simUsers) }));
+    } else {
+      set({ simUsers: users });
+    }
+  },
 }));
