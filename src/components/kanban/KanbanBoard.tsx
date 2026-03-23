@@ -8,7 +8,7 @@ import { useDragAndDrop } from './useDragAndDrop';
 export function KanbanBoard() {
   const getFilteredTasks = useAppStore(s => s.getFilteredTasks);
   const updateTaskStatus  = useAppStore(s => s.updateTaskStatus);
-  const simUsers          = useAppStore(s => s.simUsers);
+  const simUsers          = useAppStore(s => Array.isArray(s.simUsers) ? s.simUsers : []);
   const [draggingTaskId, setDraggingTaskId] = useState<string | null>(null);
 
   const handleDrop = useCallback((taskId: string, newStatus: TaskStatus) => {

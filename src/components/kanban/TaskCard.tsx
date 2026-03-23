@@ -16,7 +16,7 @@ export function TaskCard({ task, simUsers, onDragStart, isDragging }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const user = getUserById(task.assigneeId);
 
-  const cardSimUsers = simUsers.filter(su => su.taskId === task.id);
+  const cardSimUsers = (Array.isArray(simUsers) ? simUsers : []).filter(su => su.taskId === task.id);
   const visibleSim = cardSimUsers.slice(0, 2);
   const overflow = cardSimUsers.length - visibleSim.length;
 
