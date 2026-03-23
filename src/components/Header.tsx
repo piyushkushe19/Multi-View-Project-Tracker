@@ -10,7 +10,7 @@ const TABS: { id: ViewMode; label: string }[] = [
 export function Header() {
   const view     = useAppStore(s => s.view);
   const setView  = useAppStore(s => s.setView);
-  const simUsers = useAppStore(s => s.simUsers);
+  const simUsers = useAppStore(s => Array.isArray(s.simUsers) ? s.simUsers : []);
 
   return (
     <header
