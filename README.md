@@ -1,6 +1,8 @@
-# Velozity Project Tracker
+# Mutli-View Project Tracker
 
-A fully-featured multi-view project management UI built with **React + TypeScript**, **Zustand**, and **Tailwind CSS**. No drag-and-drop libraries, no virtual scrolling libraries, no UI component libraries.
+A high-performance, multi-view project management UI built with React + TypeScript, Zustand, and Tailwind CSS — engineered from scratch with zero external UI, drag-and-drop, or virtualization libraries.
+
+⚡ Designed to handle 500+ tasks smoothly with real-time updates, custom drag-and-drop, and virtual scrolling
 
 Live demo: [your-deploy-url.vercel.app]
 
