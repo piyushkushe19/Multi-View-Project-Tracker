@@ -233,7 +233,7 @@ Performance factors:
 - CSS transitions only (no JS animation loops)
 - Tasks generated at runtime — zero network requests
 
-Screenshot: [add `/public/lighthouse.png` after running audit]
+Screenshot: [add `velozity-tracker/public/lighthouse_score.png` after running audit]
 
 ---
 
